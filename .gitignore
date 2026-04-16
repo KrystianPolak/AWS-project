@@ -1,0 +1,16 @@
+# Klucze SSH (prywatny i publiczny)
+id_rsa_aws
+id_rsa_aws.pub
+
+# Pliki Terraforma, których nie chcemy w repo
+.terraform/
+*.tfstate
+*.tfstate.backup
+.terraform.lock.hcl
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Ansible logs
+*.log
