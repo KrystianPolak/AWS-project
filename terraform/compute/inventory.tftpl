@@ -1,0 +1,6 @@
+[webservers]
+moj-serwer ansible_host=${ip_address}
+
+[webservers:vars]
+ansible_user=ubuntu
+ansible_ssh_private_key_file=~/.ssh/id_rsa_aws

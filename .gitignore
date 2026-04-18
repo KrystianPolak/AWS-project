@@ -14,3 +14,5 @@ Thumbs.db
 
 # Ansible logs
 *.log
+
+inventory.ini

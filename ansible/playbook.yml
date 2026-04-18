@@ -1,0 +1,27 @@
+- name: Konfiguracja mojego serwera WWW
+  hosts: webservers
+  become: true  
+  tasks:
+    - name: Aktualizacja pakietów
+      apt:
+        update_cache: yes
+        upgrade: dist
+
+    - name: Instalacja Nginx
+      apt:
+        name: nginx
+        state: present
+
+    - name: Uruchomienie i włączenie Nginx
+      systemd:
+        name: nginx
+        state: started
+        enabled: yes
+
+    - name: Wgraj spersonalizowana strone WWW z szablonu
+      template:
+        src: templates/index.html.j2
+        dest: /var/www/html/index.html
+        owner: www-data
+        group: www-data
+        mode: '0644'

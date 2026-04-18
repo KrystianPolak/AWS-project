@@ -56,3 +56,10 @@ resource "aws_instance" "web_server" {
 output "server_public_ip" {
   value = aws_instance.web_server.public_ip
 }
+
+resource "local_file" "ansible_inventory" {
+  content = templatefile("inventory.tftpl", {
+    ip_address = aws_instance.web_server.public_ip
+  })
+  filename = "../../ansible/inventory.ini"
+}
