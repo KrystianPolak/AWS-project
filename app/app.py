@@ -32,9 +32,9 @@ def index():
             h1 { text-align: center; color: #2c3e50; font-size: 24px; }
             form { display: flex; gap: 10px; margin-bottom: 20px; }
             input[type="text"] { flex: 1; padding: 10px; border: 1px solid #ddd; border-radius: 6px; outline: none; }
-            input[type="text"]:focus { border-color: #3498db; }
-            button { background-color: #3498db; color: white; border: none; padding: 10px 15px; border-radius: 6px; cursor: pointer; transition: 0.3s; }
-            button:hover { background-color: #2980b9; }
+            input[type="text"]:focus { border-color: #13ba3c; }
+            button { background-color: #13ba3c; color: white; border: none; padding: 10px 15px; border-radius: 6px; cursor: pointer; transition: 0.3s; }
+            button:hover { background-color: #16a639; }
             ul { list-style-type: none; padding: 0; margin: 0; }
             li { background: #fdfdfd; border: 1px solid #eee; margin-bottom: 10px; padding: 12px; border-radius: 6px; display: flex; justify-content: space-between; align-items: center; }
             a.delete { color: #e74c3c; text-decoration: none; font-weight: bold; padding: 5px 10px; border-radius: 4px; }
