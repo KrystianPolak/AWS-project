@@ -2,7 +2,7 @@ from flask import Flask, render_template_string, request, redirect, url_for
 
 app = Flask(__name__)
 
-todos = ["Nauczyć się CI/CD", "Skonfigurować GitHub Actions"]
+todoos = ["Nauczyć się CI/CD", "Skonfigurować GitHub Actions"]
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
