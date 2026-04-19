@@ -8,6 +8,9 @@ id_rsa_aws.pub
 *.tfstate.backup
 .terraform.lock.hcl
 
+.env
+__pycache__/
+
 # OS files
 .DS_Store
 Thumbs.db

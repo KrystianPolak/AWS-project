@@ -5,6 +5,7 @@
     - name: Aktualizacja pakietów
       apt:
         update_cache: yes
+        cache_valid_time: 3600
         upgrade: dist
 
     - name: Instalacja Nginx
@@ -18,10 +19,15 @@
         state: started
         enabled: yes
 
-    - name: Wgraj spersonalizowana strone WWW z szablonu
+    - name: Wgraj konfiguracje Reverse Proxy dla Nginxa
       template:
-        src: templates/index.html.j2
-        dest: /var/www/html/index.html
-        owner: www-data
-        group: www-data
+        src: templates/reverse-proxy.conf.j2
+        dest: /etc/nginx/sites-available/default
         mode: '0644'
+      notify: Restart Nginx 
+
+  handlers:
+    - name: Restart Nginx
+      systemd:
+        name: nginx
+        state: restarted
