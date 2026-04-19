@@ -28,6 +28,7 @@ jobs:
           pytest test_app.py
 
   build-and-push:
+    needs: test
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
